@@ -11,14 +11,20 @@ require_once ROOT . "/components/Db.php";
 class News {
 
 
-    public function getNewsBiId($id){
-        $db = Db::getConnection();
-        
+    public static function getNewsBiId($id){
+        $id = intval($id);
+        if($id){
+            $db = Db::getConnection();
+            $result = $db->query('SELECT * FROM news WHERE id='.$id);
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            $one_news = $result->fetch();
+
+            return $one_news;
+        }
 
     }
 
     public static function getNewsList(){
-        //$db = new PDO("mysql:host=$host;dbname=$db_name", $user, $password);
-        return array(12,12);
+        $db = Db::getConnection();
     }
 }
