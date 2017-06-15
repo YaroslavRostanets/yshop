@@ -1,0 +1,7 @@
+AddDefaultCharset utf-8
+
+RewriteEngine on
+RewriteBase /php/cms/
+RewriteRule ^(.*)$ index.php
+RewriteCond %{HTTP_HOST} ^http://yaroslavrostanets.16mb.com/php/cms$
+RewriteCond %{REQUEST_URI} !^/testt$
