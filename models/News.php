@@ -11,7 +11,9 @@ require_once ROOT . "/components/Db.php";
 class News {
 
 
-    public function getNewsBiId(){
+    public function getNewsBiId($id){
+        $db = Db::getConnection();
+        
 
     }
 

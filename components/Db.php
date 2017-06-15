@@ -19,7 +19,7 @@ class Db {
     }
 
 }
-Db::getConnection();
+
 
 ?>
 
