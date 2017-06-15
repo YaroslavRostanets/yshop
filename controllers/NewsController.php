@@ -11,7 +11,6 @@ class NewsController {
 
     public function actionList(){
         $newsList = News::getNewsList();
-        pri($newsList);
     }
 
     public function actionView($category, $id) {
