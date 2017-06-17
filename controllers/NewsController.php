@@ -11,9 +11,11 @@ class NewsController {
 
     public function actionList(){
         $newsList = News::getNewsList();
+        pri($newsList);
+        return $newsList;
     }
 
-    public function actionView($id) {
+    public function actionView($id,$category) {
         $arrResult = News::getNewsBiId($id);
 
         require_once ROOT.'/views/news/oneNews.php';

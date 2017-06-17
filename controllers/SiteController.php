@@ -5,9 +5,11 @@
  * Date: 16.06.2017
  * Time: 0:56
  */
-class Site {
+class SiteController {
 
-    public function ActionIndex(){
+    public function actionIndex(){
+        require_once ROOT."/views/site/index.php";
 
+        return true;
     }
 }

@@ -25,6 +25,7 @@ class News {
     }
 
     public static function getNewsList(){
-        $db = Db::getConnection();
+        //$db = Db::getConnection();
+        return array('sdsdsd','ssss');
     }
 }
