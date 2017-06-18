@@ -8,7 +8,12 @@
 class ProductController {
 
     public function actionList(){
-        echo "sdsdsdsd";
+        include_once ROOT."/views/product/catalog.php";
+        return true;
+    }
+
+    public function actionDetail(){
+        include_once ROOT."/views/product/detail.php";
         return true;
     }
 }
