@@ -5,9 +5,13 @@
  * Date: 11.06.2017
  * Time: 17:36
  */
+require_once ROOT."/models/Category.php";
+
 class ProductController {
 
     public function actionList(){
+        $categories = Category::getCategoryList();
+        $products = 1;
         include_once ROOT."/views/product/catalog.php";
         return true;
     }
