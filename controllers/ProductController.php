@@ -9,9 +9,11 @@ require_once ROOT."/models/Category.php";
 
 class ProductController {
 
-    public function actionList(){
+    public function actionList($category = null,$subcategory = null){
+        echo "Категория: $category";
+        echo "субатегория: $subcategory";
         $categories = Category::getCategoryList();
-        $products = 1;
+        //$products = 1;
         include_once ROOT."/views/product/catalog.php";
         return true;
     }

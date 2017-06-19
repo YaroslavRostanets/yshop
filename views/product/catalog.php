@@ -152,25 +152,16 @@
             </div>
         </div>
         <div class="col-md-3 product-bottom">
-            <!--categories-->
+            
             <div class=" rsidebar span_1_of_left">
-                <h3 class="cate">Categories</h3>
+                <h3 class="cate">Категории</h3>
                 <ul class="menu-drop">
-                    <!--
-                    <li class="item1"><a href="#">Men </a>
-                        <ul class="cute">
-                            <li class="subitem1"><a href="single.html">Cute Kittens </a></li>
-                            <li class="subitem2"><a href="single.html">Strange Stuff </a></li>
-                            <li class="subitem3"><a href="single.html">Automatic Fails </a></li>
-                        </ul>
-                    </li>
-                    -->
 
                     <? foreach ($categories as $value) : ?>
                     <li class="item2"><a href="<?= $value['id']?>"><?= $value['name']?></a>
                         <ul class="cute">
                             <? foreach ($value['subcategory'] as $subcategory) : ?>
-                            <li class="subitem1"><a href=""><?= $subcategory['name'] ?></a></li>
+                            <li class="subitem1"><a href="<?= SITE_ROOT."product/".$value['id'].'/'.$subcategory['id']?>"><?= $subcategory['name'] ?></a></li>
                             <? endforeach; ?>
                         </ul>
 

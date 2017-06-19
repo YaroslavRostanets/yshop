@@ -8,7 +8,11 @@
 return array(
     "news/view/([0-z]+)" => "news/view/$1", //news/sport/23
     "news" => "news/list",
-    "product/detail/([0-9]+)" => "product/detail",
-    "product" => "product/list",
+
+    "product/([0-9]+)/([0-9]+)" => "product/list/$1/$2", //Поиск по субкатегории
+    "product/([0-9]+)" => "product/list/$1", //Поиск по категории
+    "product" => "product/list", //Весь каталог
+
+    "product/detail/([0-9]+)" => "product/detail/$1",
     "" => "site/index"
 );
