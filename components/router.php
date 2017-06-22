@@ -22,7 +22,6 @@ class Router {
         $url = $this->getUrl();
         foreach ($this->routes as $key => $value){
             if(preg_match( "~$key~", $url)){
-                echo "Роут: $url";
                 $str = preg_replace("~$key~",$value,$url);
                 $params = explode("/", $str);
                 $controllerName = ucfirst(array_shift($params))."Controller";

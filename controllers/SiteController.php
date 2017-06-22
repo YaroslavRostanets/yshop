@@ -12,4 +12,10 @@ class SiteController {
 
         return true;
     }
+
+    public function actionAuth(){
+        require_once ROOT."/views/site/auth.php";
+
+        return true;
+    }
 }

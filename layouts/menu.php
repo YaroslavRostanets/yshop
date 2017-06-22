@@ -1,7 +1,7 @@
 <ul class="nav navbar-nav nav_1">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="<?= SITE_ROOT ?>">Главная</a></li>
     <li class="dropdown mega-dropdown active">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>
+        <a href="<?= SITE_ROOT ?>/1" class="dropdown-toggle" data-toggle="dropdown">Для женщин<span class="caret"></span></a>
         <div class="dropdown-menu mega-dropdown-menu">
             <div class="container-fluid">
                 <!-- Tab panes -->
@@ -23,7 +23,7 @@
         </div>
     </li>
     <li class="dropdown mega-dropdown active">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men<span class="caret"></span></a>
+        <a href="<?= SITE_ROOT ?>/2" class="dropdown-toggle" data-toggle="dropdown">Для мужчин<span class="caret"></span></a>
         <div class="dropdown-menu mega-dropdown-menu">
             <div class="container-fluid">
                 <!-- Tab panes -->
@@ -45,7 +45,7 @@
 
         </div>
     </li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="account.html">Sign In</a></li>
-    <li class="last"><a href="contact.html">Contact</a></li>
+    <li><a href="<?= SITE_ROOT ?>product/">Каталог</a></li>
+    <li><a href="<?= SITE_ROOT ?>login/">Вход</a></li>
+    <li class="last"><a href="<?= SITE_ROOT ?>product/">">Контакты</a></li>
 </ul>

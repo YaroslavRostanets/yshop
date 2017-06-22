@@ -14,5 +14,10 @@ return array(
     "product" => "product/list", //Весь каталог
 
     "product/detail/([0-9]+)" => "product/detail/$1",
+
+    "contact" => "contact/index",
+
+    "login" => "site/auth",
+
     "" => "site/index"
 );
