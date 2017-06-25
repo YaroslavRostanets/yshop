@@ -11,14 +11,14 @@
 
 <div class="products">
     <div class="container">
-        <h2><?/* if(isset($category)){
-                echo (isset($subcategory))? $subcategory : $category;
+        <h2><? if(isset($category)){
+            echo isset($subcategoryName);
+                echo (isset($subcategory))? $subCategoryName : $categoryName;
             } else {
                 echo "Каталог";
-            } */?>
+            } ?>
         </h2>
 
-        <?php pri($category) ?>
 
         <div class="col-md-9">
 

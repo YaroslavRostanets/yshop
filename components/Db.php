@@ -14,7 +14,7 @@ class Db {
         $dsn = "mysql:dbname=$db_name;host=$host";
 
         $db = new PDO($dsn, $config['user'], $config['password']);
-        
+
         return $db;
     }
 

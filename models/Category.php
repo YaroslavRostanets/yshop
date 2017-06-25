@@ -12,18 +12,24 @@ class Category {
     public static function getCategoryName($id) {
         $db = Db::getConnection();
 
-        $result = $db->query("SELECT name WHERE id=1");
-        //return $result;
+        $result = $db->query("SELECT name FROM category WHERE id=$id");
+        $result->setFetchMode(PDO::FETCH_NUM);
+        $result = implode( $result->fetch() );
+
+        return $result;
 
 
     }
 
     public static function getSubCategoryName($id) {
         $db = Db::getConnection();
-        /*
-        $result = $db->query("SELECT name WHERE id=$id");
+
+        $result = $db->query("SELECT name FROM subcategory WHERE id=$id");
+        $result->setFetchMode(PDO::FETCH_NUM);
+        $result = implode( $result->fetch() );
+
         return $result;
-        */
+
     }
 
     public static function getCategoryList() {

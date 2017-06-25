@@ -8,27 +8,21 @@
 require_once ROOT."/models/Category.php";
 
 class ProductController {
-    public $categoryName;
-    public $subCategoryName;
+    public function getProductsByCatId($id){
+
+    }
 
     public function actionList($category = NULL,$subcategory = NULL){
         $categories = Category::getCategoryList();
-        echo("Категория-".$category."-");
-
 
         if(isset($category)){
-            echo "22";
-            $categoryName = Category::getCategoryName(1);
-            echo ($categoryName);
-            /*
+            $categoryName = Category::getCategoryName($category);
             if(isset($subcategory)){
-                $subCategoryName = Category::getCategoryList($subcategory);
+                $subCategoryName = Category::getSubCategoryName($subcategory);
             }
-            */
         }
 
 
-        //$products = 1;
         include_once ROOT."/views/product/catalog.php";
         return true;
     }

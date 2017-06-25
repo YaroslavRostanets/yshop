@@ -11,6 +11,14 @@ class Product {
 
     public static function getAllProducts(){
         $db = Db::getConnection();
+    }
 
+    public static function getProductByCatId() {
+        $db = Db::getConnection();
+        $result = $db->query("SELECT * FROM product WHERE id=$id");
+        $result->setFetchMode(PDO::FETCH_NUM);
+        $result = implode( $result->fetch() );
+
+        return $result;
     }
 }
