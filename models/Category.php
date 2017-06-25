@@ -9,6 +9,23 @@ require_once ROOT."/components/Db.php";
 
 class Category {
 
+    public static function getCategoryName($id) {
+        $db = Db::getConnection();
+
+        $result = $db->query("SELECT name WHERE id=1");
+        //return $result;
+
+
+    }
+
+    public static function getSubCategoryName($id) {
+        $db = Db::getConnection();
+        /*
+        $result = $db->query("SELECT name WHERE id=$id");
+        return $result;
+        */
+    }
+
     public static function getCategoryList() {
         $db = Db::getConnection();
         $result = $db->query("SELECT * FROM category ORDER BY sort");
@@ -25,6 +42,7 @@ class Category {
             $arrResult[] = $row;
 
         }
+
         return $arrResult;
     }
 }

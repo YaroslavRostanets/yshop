@@ -9,13 +9,19 @@
     </div>
 </div>
 
-<?= pri($categories) ?>
-
 <div class="products">
     <div class="container">
-        <h2>Products</h2>
+        <h2><?/* if(isset($category)){
+                echo (isset($subcategory))? $subcategory : $category;
+            } else {
+                echo "Каталог";
+            } */?>
+        </h2>
+
+        <?php pri($category) ?>
+
         <div class="col-md-9">
-            <div class="content-top1">
+
                 <div class="col-md-4 col-md4">
                     <div class="col-md1 simpleCart_shelfItem">
                         <a href="single.html">
@@ -29,128 +35,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-md4">
-                    <div class="col-md1 simpleCart_shelfItem">
-                        <a href="single.html">
-                            <img class="img-responsive" src="<?= TEMPLATE ?>images/pi2.png" alt="" />
-                        </a>
-                        <h3><a href="single.html">Trouser</a></h3>
-                        <div class="price">
-                            <h5 class="item_price">$300</h5>
-                            <a href="#" class="item_add">Add To Cart</a>
-                            <div class="clearfix"> </div>
-                        </div>
 
-                    </div>
-                </div>
-                <div class="col-md-4 col-md4">
-                    <div class="col-md1 simpleCart_shelfItem">
-                        <a href="single.html">
-                            <img class="img-responsive" src="<?= TEMPLATE ?>images/pi4.png" alt="" />
-                        </a>
-                        <h3><a href="single.html">Pant</a></h3>
-                        <div class="price">
-                            <h5 class="item_price">$300</h5>
-                            <a href="#" class="item_add">Add To Cart</a>
-                            <div class="clearfix"> </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="clearfix"> </div>
-            </div>
-            <div class="content-top1">
-                <div class="col-md-4 col-md4">
-                    <div class="col-md1 simpleCart_shelfItem">
-                        <a href="single.html">
-                            <img class="img-responsive" src="<?= TEMPLATE ?>images/pi1.png" alt="" />
-                        </a>
-                        <h3><a href="single.html">Trouser</a></h3>
-                        <div class="price">
-                            <h5 class="item_price">$300</h5>
-                            <a href="#" class="item_add">Add To Cart</a>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-md4">
-                    <div class="col-md1 simpleCart_shelfItem">
-                        <a href="single.html">
-                            <img class="img-responsive" src="<?= TEMPLATE ?>images/pi3.png" alt="" />
-                        </a>
-                        <h3><a href="single.html">Palazoo</a></h3>
-                        <div class="price">
-                            <h5 class="item_price">$300</h5>
-                            <a href="#" class="item_add">Add To Cart</a>
-                            <div class="clearfix"> </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-4 col-md4">
-                    <div class="col-md1 simpleCart_shelfItem">
-                        <a href="single.html">
-                            <img class="img-responsive" src="<?= TEMPLATE ?>images/pi12.png" alt="" />
-                        </a>
-                        <h3><a href="single.html">Palazoo</a></h3>
-                        <div class="price">
-                            <h5 class="item_price">$300</h5>
-                            <a href="#" class="item_add">Add To Cart</a>
-                            <div class="clearfix"> </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="clearfix"> </div>
-            </div>
-            <div class="content-top1">
-                <div class="col-md-4 col-md4">
-                    <div class="col-md1 simpleCart_shelfItem">
-                        <a href="single.html">
-                            <img class="img-responsive" src="<?= TEMPLATE ?>images/pi9.png" alt="" />
-                        </a>
-                        <h3><a href="single.html">Trouser</a></h3>
-                        <div class="price">
-                            <h5 class="item_price">$300</h5>
-                            <a href="#" class="item_add">Add To Cart</a>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-md4">
-                    <div class="col-md1 simpleCart_shelfItem">
-                        <a href="single.html">
-                            <img class="img-responsive" src="<?= TEMPLATE ?>images/pi11.png" alt="" />
-                        </a>
-                        <h3><a href="single.html">Jeans</a></h3>
-                        <div class="price">
-                            <h5 class="item_price">$300</h5>
-                            <a href="#" class="item_add">Add To Cart</a>
-                            <div class="clearfix"> </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-4 col-md4">
-                    <div class="col-md1 simpleCart_shelfItem">
-                        <a href="single.html">
-                            <img class="img-responsive" src="<?= TEMPLATE ?>images/pi10.png" alt="" />
-                        </a>
-                        <h3><a href="single.html">Trouser</a></h3>
-                        <div class="price">
-                            <h5 class="item_price">$300</h5>
-                            <a href="#" class="item_add">Add To Cart</a>
-                            <div class="clearfix"> </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="clearfix"> </div>
-            </div>
         </div>
+
         <div class="col-md-3 product-bottom">
             
             <div class=" rsidebar span_1_of_left">
