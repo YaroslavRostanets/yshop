@@ -8,16 +8,13 @@
 class Db {
 
     public static function getConnection(){
-        $config = include_once ROOT.'/config/db_config.php';
-        $host = $config['host'];
+        $config = include ROOT.'/config/db_config.php';
         $db_name = $config['db_name'];
-        $user = $config['user'];
-        $password = $config['password'];
-        pri($config);
-        $db = new PDO("mysql:host=$host;dbname=$db_name", $user, $password);
+        $host = $config['host'];
+        $dsn = "mysql:dbname=$db_name;host=$host";
 
-
-
+        $db = new PDO($dsn, $config['user'], $config['password']);
+        
         return $db;
     }
 
