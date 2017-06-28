@@ -27,6 +27,34 @@ h1,h2,h3,h4,h5,h6,label,p{
 	margin:0;	
 }
 /*----*/
+.page-navigation {
+    width: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+.one-product {
+    margin-bottom: 25px;
+}
+.simpleCart_shelfItem {
+    height: 400px;
+    display: block;
+}
+.simpleCart_shelfItem:hover {
+    text-decoration: none;
+}
+.img-wrap {
+    height: 255px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
 .logo span {
     color: #fa03bb;
 }

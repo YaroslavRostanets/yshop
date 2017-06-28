@@ -5,20 +5,33 @@
  * Date: 18.06.2017
  * Time: 17:56
  */
-include ROOT."/components/Db.php";
 
 class Product {
+    const PRODUCTS_ON_PAGE = 6;
 
-    public static function getAllProducts(){
+    public static function getAllProducts($page){
         $db = Db::getConnection();
+        $offset = self::PRODUCTS_ON_PAGE * (--$page);
+        $result = $db->query("SELECT * FROM product LIMIT ".self::PRODUCTS_ON_PAGE." OFFSET $offset;");
+        pri($result);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $arrResult = array();
+        while($row = $result->fetch()){
+            $arrResult[] = $row;
+        }
+        return $arrResult;
     }
 
-    public static function getProductByCatId() {
+    public static function getProductByCatId($id,$offset) {
         $db = Db::getConnection();
-        $result = $db->query("SELECT * FROM product WHERE id=$id");
+        $result = $db->query("SELECT * FROM product WHERE id=$id LIMIT=".self::PRODUCTS_ON_PAGE." OFFSET=$offset");
         $result->setFetchMode(PDO::FETCH_NUM);
         $result = implode( $result->fetch() );
 
         return $result;
+    }
+
+    public static function getProductsBySubCategory(){
+
     }
 }

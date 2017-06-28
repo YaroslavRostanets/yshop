@@ -10,10 +10,13 @@ return array(
     "news" => "news/list",
 
     "product/([0-9]+)/([0-9]+)" => "product/list/$1/$2", //Поиск по субкатегории
-    "product/([0-9]+)" => "product/list/$1", //Поиск по категории
+    "product/([0-9]+)" => "product/list/$1", //Поиск по субкатегории
+
+    "product/detail/([0-9]+)" => "product/detail/$1", //Детальная (карточка товара)
+
     "product" => "product/list", //Весь каталог
 
-    "product/detail/([0-9]+)" => "product/detail/$1",
+
 
     "contact" => "contact/index",
 
