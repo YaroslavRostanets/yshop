@@ -14,12 +14,16 @@ class Router {
     }
     private function getUrl() {
         if(!empty($_SERVER['REQUEST_URI'])){
-            return str_replace(SITE_ROOT, '', trim($_SERVER['REQUEST_URI']));
+            $str = str_replace(SITE_ROOT, '', trim($_SERVER['REQUEST_URI']));
+            $getParams = strstr($str,'?');
+            $str = str_replace($getParams,'',$str);
+            return $str;
         }
     }
 
     public function run() {
         $url = $this->getUrl();
+        echo $url;
         foreach ($this->routes as $key => $value){
             if(preg_match( "~$key~", $url)){
                 $str = preg_replace("~$key~",$value,$url);
@@ -33,7 +37,6 @@ class Router {
                     $result = call_user_func_array(array($controllerObj,$actionName),$params);
                     if($result != null) break;
                 }
-
             }
             else {
                 //echo "404";

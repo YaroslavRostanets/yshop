@@ -5,6 +5,7 @@
  * Date: 15.06.2017
  * Time: 21:16
  */
+
 class Db {
 
     public static function getConnection(){

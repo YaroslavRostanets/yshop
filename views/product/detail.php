@@ -253,5 +253,18 @@
         <div class="clearfix"> </div>
     </div>
 </div>
+    <link rel="stylesheet" href="<?= TEMPLATE ?>css/flexslider.css" type="text/css" media="screen" />
+    <script src="<?= TEMPLATE ?>js/imagezoom.js"></script>
+    <script defer src="<?= TEMPLATE ?>js/jquery.flexslider.js"></script>
+
+    <script>
+        // Can also be used with $(document).ready()
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
 
 <? include_once ROOT."/layouts/footer.php" ?>

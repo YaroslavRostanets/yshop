@@ -21,21 +21,31 @@
 
 
         <div class="col-md-9">
+            <?php foreach ($productArr as $product) :?>
 
-                <div class="col-md-4 col-md4">
-                    <div class="col-md1 simpleCart_shelfItem">
-                        <a href="single.html">
-                            <img class="img-responsive" src="<?= TEMPLATE ?>images/pi.png" alt="" />
-                        </a>
-                        <h3><a href="single.html">Trouser</a></h3>
+                <div data-id="<?= $product['id'] ?>" class="col-md-4 col-md4 one-product">
+                    <a href="<?= SITE_ROOT ?>product/detail/<?= $product['id'] ?>" class="col-md1 simpleCart_shelfItem">
+                        <div class="img-wrap" href="single.html">
+                            <img class="img-responsive" src="<?= $product['image']?>" alt="" />
+                        </div>
+                        <h3>
+                            <object>
+                                <a href="single.html"><?= $product['name'] ?></a>
+                            </object>
+                        </h3>
                         <div class="price">
-                            <h5 class="item_price">$300</h5>
-                            <a href="#" class="item_add">Add To Cart</a>
+                            <h5 class="item_price"><?= $product['price']?> <span> грн</span></h5>
+                            <object>
+                                <a href="#" class="item_add">Купить</a>
+                            </object>
                             <div class="clearfix"> </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
+            <?php endforeach; ?>
+
+            <?= Pagination::rendPagination() ?>
         </div>
 
         <div class="col-md-3 product-bottom">
@@ -80,7 +90,7 @@
             <!--//menu-->
             <!--seller-->
             <div class="product-bottom">
-                <h3 class="cate">Best Sellers</h3>
+                <h3 class="cate"></h3>
                 <div class="product-go">
                     <div class=" fashion-grid">
                         <a href="single.html"><img class="img-responsive " src="<?= TEMPLATE ?>images/pr.jpg" alt=""></a>

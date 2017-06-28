@@ -5,7 +5,6 @@
  * Date: 18.06.2017
  * Time: 13:30
  */
-require_once ROOT."/components/Db.php";
 
 class Category {
 
