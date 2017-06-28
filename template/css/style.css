@@ -43,6 +43,19 @@ h1,h2,h3,h4,h5,h6,label,p{
 .simpleCart_shelfItem:hover {
     text-decoration: none;
 }
+.pagination>.active {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    margin-left: -1px;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
 .img-wrap {
     height: 255px;
     display: flex;

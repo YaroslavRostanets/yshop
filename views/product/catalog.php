@@ -45,7 +45,7 @@
 
             <?php endforeach; ?>
 
-            <?= Pagination::rendPagination() ?>
+            <?= Pagination::rendPagination($page, $pages) ?>
         </div>
 
         <div class="col-md-3 product-bottom">

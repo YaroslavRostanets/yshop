@@ -13,12 +13,18 @@ class Product {
         $db = Db::getConnection();
         $offset = self::PRODUCTS_ON_PAGE * (--$page);
         $result = $db->query("SELECT * FROM product LIMIT ".self::PRODUCTS_ON_PAGE." OFFSET $offset;");
-        pri($result);
+            $count = $db->query("SELECT COUNT(*) FROM product");
+            $count->setFetchMode(PDO::FETCH_NUM);
+            $count = implode($count->fetch());
         $result->setFetchMode(PDO::FETCH_ASSOC);
-        $arrResult = array();
+        $arrResult = array(
+            'data' => array(),
+            'pages' => intval($count / self::PRODUCTS_ON_PAGE)
+        );
         while($row = $result->fetch()){
-            $arrResult[] = $row;
+            $arrResult['data'][] = $row;
         }
+
         return $arrResult;
     }
 
@@ -31,7 +37,24 @@ class Product {
         return $result;
     }
 
-    public static function getProductsBySubCategory(){
+    public static function getProductsBySubCategory($subcategory, $page){
+        $db = Db::getConnection();
+        $offset = self::PRODUCTS_ON_PAGE * (--$page);
+
+        $result = $db->query("SELECT * FROM subcategory WHERE id=$subcategory LIMIT ".self::PRODUCTS_ON_PAGE." OFFSET $offset;");
+            $count = $db->query("SELECT COUNT(*) FROM subcategory WHERE id=$subcategory");
+            $count->setFetchMode(PDO::FETCH_NUM);
+            $count = implode($count->fetch());
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $arrResult = array(
+            'data' => array(),
+            'pages' => intval($count / self::PRODUCTS_ON_PAGE)
+        );
+        while($row = $result->fetch()){
+            $arrResult['data'][] = $row;
+        }
+
+        return $arrResult;
 
     }
 }

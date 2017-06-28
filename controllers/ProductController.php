@@ -18,6 +18,7 @@ class ProductController {
 
     public function actionList($category = NULL,$subcategory = NULL){
         $page = (isset($_GET['page']))? $_GET['page'] : 1;
+        $pages = 10; //Default
         $categories = Category::getCategoryList();
         $productArr = array();
 
@@ -26,15 +27,13 @@ class ProductController {
             $categoryName = Category::getCategoryName($category);
             if(isset($subcategory)){
                 $subCategoryName = Category::getSubCategoryName($subcategory);
-                $productArr = Product::getProductsBySubCategory();
+                $result = Product::getProductsBySubCategory($subcategory, $page);
             }
         } else {
-            $productArr = Product::getAllProducts($page);
-            pri($productArr);
+            $result = Product::getAllProducts($page);
         }
-
-
-
+        $productArr = $result['data'];
+        $pages = $result['pages'];
 
         include_once ROOT."/views/product/catalog.php";
         return true;

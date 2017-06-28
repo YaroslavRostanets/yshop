@@ -8,7 +8,7 @@
 
 class Pagination {
 
-    public static function rendPagination($section = NULL, $page = NULL, $pages = NULL){
+    public static function rendPagination($page = NULL, $pages = NULL){
         $pagination = include ROOT."/layouts/pagination.php";
         return $pagination;
     }

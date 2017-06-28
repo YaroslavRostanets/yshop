@@ -23,7 +23,6 @@ class Router {
 
     public function run() {
         $url = $this->getUrl();
-        echo $url;
         foreach ($this->routes as $key => $value){
             if(preg_match( "~$key~", $url)){
                 $str = preg_replace("~$key~",$value,$url);

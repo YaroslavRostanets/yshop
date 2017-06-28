@@ -1,19 +1,32 @@
+<?php if($pages > 1) : ?>
 <nav aria-label="Page navigation" class="page-navigation">
     <ul class="pagination">
-        <li>
-            <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-            <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
+        <?php if($page != 1) : ?>
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        <?php endif; ?>
+
+
+        <?php for($i = 1; $i<= $pages; $i++):
+            if($page != $i):
+        ?>
+                <li>
+                    <a href="<?= SITE_ROOT ?>product?page=<?= $i ?>"><?= $i ?></a>
+                </li>
+            <?php else :?>
+                <li class='active'><?= $i ?></li>
+            <?php endif; endfor; ?>
+
+        <?php if($page != $pages): ?>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        <?php endif; ?>
     </ul>
 </nav>
+<? endif; ?>
