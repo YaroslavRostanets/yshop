@@ -16,6 +16,12 @@
             <div class="col-md-5 grid">
                 <div class="flexslider">
                     <ul class="slides">
+                        <?php foreach ($sliderImg as $slide): ?>
+                            <li data-thumb="<?= $slide ?>">
+                                <div class="thumb-image"> <img src="<?= $slide ?>" data-imagezoom="true" class="img-responsive"> </div>
+                            </li>
+                        <? endforeach; ?>
+                        <!--
                         <li data-thumb="<?= TEMPLATE ?>images/si.jpg">
                             <div class="thumb-image"> <img src="<?= TEMPLATE ?>images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
@@ -25,13 +31,14 @@
                         <li data-thumb="images/si2.jpg">
                             <div class="thumb-image"> <img src="<?= TEMPLATE ?>images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
+                        -->
                     </ul>
                 </div>
             </div>
             <div class="col-md-7 single-top-in">
                 <div class="single-para simpleCart_shelfItem">
-                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                    <h2><?= $product['name'] ?></h2>
+                    <p><?= $product['description'] ?></p>
                     <div class="star-on">
                         <ul>
                             <li><a href="#"><i class="glyphicon glyphicon-star"> </i></a></li>
@@ -53,21 +60,17 @@
                         <h6>Available Options :</h6>
                         <ul>
 
-                            <li>Size:<select>
+                            <li>Размер:
+                                <select>
                                     <option>Large</option>
                                     <option>Medium</option>
                                     <option>small</option>
                                     <option>Large</option>
                                     <option>small</option>
                                 </select></li>
-                            <li>Cost:
-                                <select>
-                                    <option>U.S.Dollar</option>
-                                    <option>Euro</option>
-                                </select></li>
                         </ul>
                     </div>
-                    <a href="#" class="cart item_add">More details</a>
+                    <a href="#" class="cart item_add">Добавить в корзину</a>
                 </div>
             </div>
             <div class="clearfix"> </div>

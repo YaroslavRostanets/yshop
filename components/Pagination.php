@@ -9,6 +9,7 @@
 class Pagination {
 
     public static function rendPagination($page = NULL, $pages = NULL){
+        $siteRedirectURI = str_replace(SITE_ROOT,'',$_SERVER['REDIRECT_URL']);
         $pagination = include ROOT."/layouts/pagination.php";
         return $pagination;
     }

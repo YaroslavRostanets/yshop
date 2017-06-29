@@ -3,7 +3,7 @@
     <ul class="pagination">
         <?php if($page != 1) : ?>
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="<?= SITE_ROOT . $siteRedirectURI ?>?page=<?= $page-1 ?>" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -14,7 +14,7 @@
             if($page != $i):
         ?>
                 <li>
-                    <a href="<?= SITE_ROOT ?>product?page=<?= $i ?>"><?= $i ?></a>
+                    <a href="<?= SITE_ROOT . $siteRedirectURI ?>?page=<?= $i ?>"><?= $i ?></a>
                 </li>
             <?php else :?>
                 <li class='active'><?= $i ?></li>
@@ -22,7 +22,7 @@
 
         <?php if($page != $pages): ?>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="<?= SITE_ROOT . $siteRedirectURI ?>?page=<?= $page+1 ?>" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

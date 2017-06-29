@@ -25,6 +25,7 @@ class ProductController {
 
         if(isset($category)){
             $categoryName = Category::getCategoryName($category);
+            $result = Product::getProductByCategory($category, $page);
             if(isset($subcategory)){
                 $subCategoryName = Category::getSubCategoryName($subcategory);
                 $result = Product::getProductsBySubCategory($subcategory, $page);
@@ -40,6 +41,13 @@ class ProductController {
     }
 
     public function actionDetail($id = NULL){
+        $product = Product::getProductById($id);
+        $sliderImg = explode('|',$product['images']);
+
+        pri($product);
+
+
+
         include_once ROOT."/views/product/detail.php";
         return true;
     }
