@@ -5,10 +5,7 @@
  * Date: 11.06.2017
  * Time: 17:36
  */
-require_once ROOT."/models/Category.php";
-require_once ROOT."/models/Product.php";
-require_once ROOT."/components/Db.php";
-require_once ROOT."/components/Pagination.php";
+
 
 
 class ProductController {
@@ -44,7 +41,7 @@ class ProductController {
         $product = Product::getProductById($id);
         $sliderImg = explode('|',$product['images']);
 
-        pri($product);
+        $sizes = explode('|',$product['size']);
 
 
 

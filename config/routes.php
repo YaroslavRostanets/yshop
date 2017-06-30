@@ -16,7 +16,10 @@ return array(
 
     "product" => "product/list", //Весь каталог
 
+    "profile" => "profile/index",
 
+    "user/register" => "user/register",
+    "user/login" => "user/login",
 
     "contact" => "contact/index",
 

@@ -21,17 +21,6 @@
                                 <div class="thumb-image"> <img src="<?= $slide ?>" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
                         <? endforeach; ?>
-                        <!--
-                        <li data-thumb="<?= TEMPLATE ?>images/si.jpg">
-                            <div class="thumb-image"> <img src="<?= TEMPLATE ?>images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li data-thumb="images/si1.jpg">
-                            <div class="thumb-image"> <img src="<?= TEMPLATE ?>images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li data-thumb="images/si2.jpg">
-                            <div class="thumb-image"> <img src="<?= TEMPLATE ?>images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        -->
                     </ul>
                 </div>
             </div>
@@ -54,20 +43,18 @@
                         <div class="clearfix"> </div>
                     </div>
 
-                    <label  class="add-to item_price">$70.5</label>
+                    <label  class="add-to item_price"><?= $product['price'] ?> грн</label>
 
                     <div class="available">
-                        <h6>Available Options :</h6>
                         <ul>
 
                             <li>Размер:
                                 <select>
-                                    <option>Large</option>
-                                    <option>Medium</option>
-                                    <option>small</option>
-                                    <option>Large</option>
-                                    <option>small</option>
-                                </select></li>
+                                    <?php foreach ($sizes as $size): ?>
+                                    <option value="<?= $size ?>"><?= $size ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </li>
                         </ul>
                     </div>
                     <a href="#" class="cart item_add">Добавить в корзину</a>
