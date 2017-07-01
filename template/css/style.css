@@ -1047,7 +1047,7 @@ ul.social {
 .register-but{
 	margin-top:1em;
 }
-.register-but form input[type="submit"] {
+.register-but input[type="submit"] {
 	background:#fa03bb;
 	color: #FFF;
 	font-size:1em;
@@ -1059,6 +1059,12 @@ ul.social {
 	display: inline-block;
 	border:none;
 	outline:none;
+}
+.error {
+    color: red;
+    font-size: 13px;
+    font-family: Arial;
+    margin-top: -7px;
 }
 .register-but input[type="submit"]:hover {
 	background:#403b37;
