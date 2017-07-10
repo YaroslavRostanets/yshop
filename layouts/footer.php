@@ -71,6 +71,7 @@
         </div>
     </div>
 </div>
+<?= pri($_SESSION) ?>
 <!--footer-->
 </body>
 </html>

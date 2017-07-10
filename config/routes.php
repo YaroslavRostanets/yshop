@@ -23,7 +23,5 @@ return array(
 
     "contact" => "contact/index",
 
-    "login" => "site/auth",
-
     "" => "site/index"
 );

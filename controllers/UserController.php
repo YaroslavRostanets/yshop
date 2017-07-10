@@ -18,7 +18,6 @@ class UserController {
             'passwordError' => ''
         );
         if(isset($_POST['submit'])){
-            pri($_POST);
 
 
             $errors['firstNameError'] = User::checkName($_POST['firstname']);
@@ -32,11 +31,17 @@ class UserController {
                 }
             }
             foreach ($errors as $value){
-                if($value !== true ){
+                if($value !== '' ){
                     break;
-                } else {
-                    User::Register();
                 }
+            }
+
+            $errorFlag = implode($errors);
+
+            if($errorFlag === ''){
+                $password = $_POST['password'];
+                $lastname = $_POST['lastname'];
+                $userIsRegistred = User::Register($firstname,$lastname,$email,$password);
             }
         }
 
@@ -45,7 +50,24 @@ class UserController {
     }
 
     public function ActionLogin(){
+        $email = '';
+        $password = '';
 
+        $errors = array(
+            'loginError' => ''
+        );
+
+        if(isset($_POST["submit"])){
+            $errors['loginError'] = User::checkLoginError($_POST['email'],$_POST['password']);
+
+            if($errors['loginError'] == ''){
+                User::auth($_POST['email']);
+            }
+        }
+
+
+        include_once ROOT.'/views/user/login.php';
+        return true;
     }
 }
 
