@@ -55,7 +55,6 @@
                 <p>Call me</p>
             </div>
             <div class="col-sm-2 search animated wow fadeInRight" data-wow-delay=".5s">
-<<<<<<< HEAD
 
                 <?php if (isset($_SESSION['user_id'])) : ?>
 
@@ -71,9 +70,6 @@
 
                 <?php endif; ?>
 
-=======
-                <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a>
->>>>>>> b08e9a520ea6548f545bf294ccfe3e6631eb0fce
             </div>
             <div class="clearfix"> </div>
         </div>
