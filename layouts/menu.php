@@ -9,4 +9,5 @@
     <li><a href="<?= SITE_ROOT ?>/product">Каталог</a></li>
     <li><a href="<?= SITE_ROOT ?>/user/login/">Вход</a></li>
     <li class="last"><a href="<?= SITE_ROOT ?>/product/">Контакты</a></li>
+
 </ul>

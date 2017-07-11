@@ -19,7 +19,9 @@ require_once ROOT."/components/router.php";
 require_once ROOT."/components/autoload.php";
 $routes = require_once ROOT."/config/routes.php";
 session_start();
+
 pri($_SESSION);
+
 
 //3. Подключение к БД
 

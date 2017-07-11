@@ -94,6 +94,7 @@ class User {
 
         header('Location: /');
 
+
     }
 
 }

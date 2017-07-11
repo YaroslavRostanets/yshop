@@ -2770,6 +2770,7 @@ h1.typo1 {
 th {
     font-size: 0.875em;
 }
+<<<<<<< HEAD
 }
 .login-link {
     color: #7e7e7e;
@@ -2785,4 +2786,6 @@ th {
 .login-link i {
     font-size: 1.1em;
     margin-right: 3px;
+=======
+>>>>>>> b08e9a520ea6548f545bf294ccfe3e6631eb0fce
 }
