@@ -65,9 +65,16 @@ class UserController {
             }
         }
 
-
         include_once ROOT.'/views/user/login.php';
         return true;
+    }
+
+    public function ActionLogout() {
+        if(isset($_SESSION['user_id'])){
+            unset($_SESSION['user_id']);
+
+            header('Location: /');
+        }
     }
 }
 

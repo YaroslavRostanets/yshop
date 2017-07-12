@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/yhsop.iml" filepath="$PROJECT_DIR$/.idea/yhsop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/yshop_cms.iml" filepath="$PROJECT_DIR$/.idea/yshop_cms.iml" />
     </modules>
   </component>
 </project>

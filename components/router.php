@@ -23,8 +23,6 @@ class Router {
 
     public function run() {
         $url = $this->getUrl();
-        pri($url);
-        pri( preg_match( "~user/login~", $url));
 
         foreach ($this->routes as $key => $value){
             if(preg_match( "~$key~", $url)){

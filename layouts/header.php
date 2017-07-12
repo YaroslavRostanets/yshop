@@ -58,13 +58,17 @@
 
                 <?php if (isset($_SESSION['user_id'])) : ?>
 
-                    <a class="login-link" href="<?= SITE_ROOT ?>user/login/">
+                    <a class="login-link" href="<?= SITE_ROOT ?>/user/login/">
                         <i class="fa fa-user-circle" aria-hidden="true"></i> Профиль
+                    </a>
+
+                    <a class="login-link" href="<?= SITE_ROOT ?>/user/logout">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
                     </a>
 
                 <?php else :?>
 
-                    <a class="login-link" href="<?= SITE_ROOT ?>user/login/">
+                    <a class="login-link" href="<?= SITE_ROOT ?>/user/login/">
                         <i class="fa fa-sign-in" aria-hidden="true"></i> Войти
                     </a>
 
