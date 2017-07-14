@@ -65,6 +65,12 @@ class UserController {
             }
         }
 
+        if(isset($_SESSION['user_id'])){
+            $result = User::getUserById($_SESSION['user_id']);
+            echo "----------";
+            pri($result);
+        }
+
         include_once ROOT.'/views/user/login.php';
         return true;
     }

@@ -94,7 +94,18 @@ class User {
 
         header('Location: /');
 
+    }
 
+    public static function getUserById($id){
+        $db = Db::getConnection();
+        $sql = "SELECT * FROM user WHERE id = :id";
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_STR);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->execute();
+        $user = $result->fetch();
+
+        return $user;
     }
 
 }

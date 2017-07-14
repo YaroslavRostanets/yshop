@@ -11,6 +11,7 @@
 </div>
 <div class="account">
     <div class="container">
+        <?php echo "lalala"; ?>
 
         <?php if(isset($_SESSION['user_id'])): ?>
 
@@ -19,7 +20,7 @@
                     <div class="mation">
                         <div>
                             <span>Имя</span>
-                            <input type="text" name="firstname" value="<?= $firstname ?>">
+                            <input type="text" name="firstname" value="">
                             <div class="error"><?= $errors['loginError']?></div>
                         </div>
 
