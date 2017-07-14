@@ -2770,7 +2770,6 @@ h1.typo1 {
 th {
     font-size: 0.875em;
 }
-<<<<<<< HEAD
 }
 .login-link {
     color: #7e7e7e;
@@ -2778,6 +2777,10 @@ th {
     font-size: 0.9em;
     border: 1px solid #7e7e7e;
     padding: 6px 10px;
+    margin-right: 10px;
+}
+.login-link:last-child {
+    margin-right: 0;
 }
 .login-link:hover {
     text-decoration: none;
@@ -2786,6 +2789,4 @@ th {
 .login-link i {
     font-size: 1.1em;
     margin-right: 3px;
-=======
->>>>>>> b08e9a520ea6548f545bf294ccfe3e6631eb0fce
 }
