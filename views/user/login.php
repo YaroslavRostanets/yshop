@@ -11,56 +11,6 @@
 </div>
 <div class="account">
     <div class="container">
-        <?php echo "lalala"; ?>
-
-        <?php if(isset($_SESSION['user_id'])): ?>
-
-            <form action="#" method="post">
-                <div class="col-md-6  register-top-grid">
-                    <div class="mation">
-                        <div>
-                            <span>Имя</span>
-                            <input type="text" name="firstname" value="">
-                            <div class="error"><?= $errors['loginError']?></div>
-                        </div>
-
-                        <div>
-                            <span>Фамилия</span>
-                            <input type="text" name="lastname" value="<?= $lastname ?>">
-                        </div>
-
-
-                        <div>
-                            <span>Email</span>
-                            <input type="text" name="email" value="<?= $email ?>">
-                            <div class="error"><?= $errors['emailError']?></div>
-                        </div>
-
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class=" col-md-6 register-bottom-grid">
-
-                    <div class="mation">
-                        <div>
-                            <span>Пароль</span>
-                            <input type="password" name="password">
-                            <span>Повторие пароль</span>
-                            <input type="password" name="confirm_password">
-                        </div>
-                        <div class="error">
-                            <?= $errors['passwordError'] ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-                <div class="register-but">
-                    <input type="submit" name="submit" value="Отправить">
-                    <div class="clearfix"> </div>
-                </div>
-            </form>
-
-        <?php else : ?>
 
         <h2>Авторизация</h2>
         <div class="account_grid">
@@ -91,8 +41,6 @@
             </div>
             <div class="clearfix"> </div>
         </div>
-
-        <?php endif ; ?>
 
     </div>
 </div>

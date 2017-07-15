@@ -58,7 +58,7 @@
 
                 <?php if (isset($_SESSION['user_id'])) : ?>
 
-                    <a class="login-link" href="<?= SITE_ROOT ?>/user/login/">
+                    <a class="login-link" href="<?= SITE_ROOT ?>/user/edit/">
                         <i class="fa fa-user-circle" aria-hidden="true"></i> Профиль
                     </a>
 

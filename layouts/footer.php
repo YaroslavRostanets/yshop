@@ -73,6 +73,7 @@
 </div>
 <div id="console" style="position: fixed; bottom: 0; width: 100%; background: #FFF; min-height: 30px; border-top: 1px solid gray;">
     <?php pri($_SESSION); ?>
+
 </div>
 <!--footer-->
 </body>

@@ -50,6 +50,10 @@ class UserController {
     }
 
     public function ActionLogin(){
+        if(isset($_SESSION['user_id'])){
+            header('Location: /user/edit');
+        }
+
         $email = '';
         $password = '';
 
@@ -65,12 +69,6 @@ class UserController {
             }
         }
 
-        if(isset($_SESSION['user_id'])){
-            $result = User::getUserById($_SESSION['user_id']);
-            echo "----------";
-            pri($result);
-        }
-
         include_once ROOT.'/views/user/login.php';
         return true;
     }
@@ -79,8 +77,36 @@ class UserController {
         if(isset($_SESSION['user_id'])){
             unset($_SESSION['user_id']);
 
-            header('Location: /');
+            header('Location: /user/login');
         }
+    }
+
+    public function ActionEdit() {
+        if($_SESSION['user_id']){
+            $user = User::getUserById($_SESSION['user_id']);
+            include_once ROOT.'/views/user/edit_user.php';
+        } else {
+
+            header('Location: /user/login');
+        }
+
+
+
+        return true;
+    }
+
+    public function ActionPassword() {
+        if($_SESSION['user_id']){
+            $user = User::getUserById($_SESSION['user_id']);
+            include_once ROOT.'/views/user/edit_password.php';
+        } else {
+
+            header('Location: /user/login');
+        }
+
+
+
+        return true;
     }
 }
 
