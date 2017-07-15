@@ -14,12 +14,26 @@ class User {
         return 'Длинна имени должна быть больше трех символов';
     }
 
+    public static function checkLastName($lastName) {
+        if(strlen($lastName) > 3){
+            return '';
+        }
+        return 'Длинна фамилии должна быть больше трех символов';
+    }
+
     public static function checkEmail($email){
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             $emailExist = self::checkEmailExist($email);
             if($emailExist !== true){
                 return $emailExist;
             }
+            return '';
+        }
+        return 'Неправильный формат email';
+    }
+
+    public static function checkEmailFormat($email){
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             return '';
         }
         return 'Неправильный формат email';
@@ -106,6 +120,19 @@ class User {
         $user = $result->fetch();
 
         return $user;
+    }
+
+    public static function updateUser($firstname, $lastname, $email) {
+        echo $lastname;
+        $id = $_SESSION['user_id'];
+        $db = Db::getConnection();
+        $sql = "UPDATE user SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_STR);
+        $result->bindParam(':firstname', $firstname, PDO::PARAM_STR);
+        $result->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        return $result->execute();
     }
 
 }

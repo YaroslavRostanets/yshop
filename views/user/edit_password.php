@@ -12,6 +12,41 @@
     <div class="account">
         <div class="container">
 
+            <form action="#" method="post">
+                <div class="col-md-6  register-top-grid">
+                    <div class="mation">
+                        <div>
+                            <span>Старый пароль</span>
+                            <input type="password" name="old_password" value="">
+                            <div class="error"></div>
+                        </div>
+
+                        <div>
+                            <span>Новый пароль</span>
+                            <input type="text" name="password" value="">
+                        </div>
+
+
+                        <div>
+                            <span>Повторите пароль</span>
+                            <input type="text" name="password-repeat" value="">
+                            <div class="error"></div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class=" col-md-6 register-bottom-grid">
+
+                </div>
+                <div class="clearfix"> </div>
+                <div class="register-but">
+                    <input type="submit" name="submit" value="Изменить пароль">
+                    <a href="#" onclick="javascript:history.go(-1)">Назад</a>
+                    <div class="clearfix"> </div>
+                </div>
+            </form>
+
         </div>
     </div>
 

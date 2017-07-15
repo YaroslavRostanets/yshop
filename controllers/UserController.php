@@ -82,13 +82,46 @@ class UserController {
     }
 
     public function ActionEdit() {
+        $errors = array(
+            'firstNameError' => '',
+            'lastNameError' => '',
+            'emailError' => ''
+        );
         if($_SESSION['user_id']){
             $user = User::getUserById($_SESSION['user_id']);
+
+            if(isset($_POST["submit"])){
+                pri($errors);
+                $errors['firstNameError'] = User::checkName($_POST['firstname']);
+                $errors['lastNameError'] = User::checkLastName($_POST['lastname']);
+                $errors['emailError'] = User::checkEmailFormat($_POST['email']);
+
+                $user['firstname'] = $_POST['firstname'];
+                $user['lastname'] = $_POST['lastname'];
+                $user['email'] = $_POST['email'];
+
+                foreach ($errors as $key => $error){
+                    if ($error != '') {
+                        break;
+                    } else {
+                        unset($errors[$key]);
+                    }
+                }
+                if(empty($errors)){
+                    $isUserUpdate = User::updateUser($user['firstname'],$user['lastname'],$user['email']);
+                    if($isUserUpdate){
+                        header('Loading: /');
+                    }
+
+                }
+            }
+
             include_once ROOT.'/views/user/edit_user.php';
         } else {
 
             header('Location: /user/login');
         }
+
 
 
 

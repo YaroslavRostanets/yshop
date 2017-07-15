@@ -71,9 +71,11 @@
         </div>
     </div>
 </div>
-<div id="console" style="position: fixed; bottom: 0; width: 100%; background: #FFF; min-height: 30px; border-top: 1px solid gray;">
+<div id="console" style="position: fixed; bottom: 0; width: 100%;
+background: #FFF; min-height: 30px;
+border-top: 1px solid gray; max-height: 200px; overflow-y: auto;">
     <?php pri($_SESSION); ?>
-
+    <?php pri($_POST) ?>
 </div>
 <!--footer-->
 </body>
