@@ -123,7 +123,6 @@ class User {
     }
 
     public static function updateUser($firstname, $lastname, $email) {
-        echo $lastname;
         $id = $_SESSION['user_id'];
         $db = Db::getConnection();
         $sql = "UPDATE user SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
